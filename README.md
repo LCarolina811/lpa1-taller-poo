@@ -123,7 +123,7 @@ Cuenta: [@tu_cuenta_github]
 
 **Conceptos**: Composición, agregación
 
-### **Fase 6: Lógica de Negocio**
+### 6. Lógica de Negocio
 
 **Archivos**: `services/tienda.py`, `services/catalogo.py`
 
