@@ -1,0 +1,3 @@
+"""
+Clase concreta Sillón.
+"""
