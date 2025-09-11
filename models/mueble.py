@@ -87,7 +87,7 @@ class Mueble(ABC):
             raise ValueError("El nombre no puede estar vacío")
         self._nombre = value.strip()
 
-    @property
+    @material.setter
     def material(self) -> str:
         return self._material
 
@@ -98,7 +98,7 @@ class Mueble(ABC):
             raise ValueError("El material no puede estar vacío")
         self._material = value.strip()
 
-    @property
+    @color.setter
     def color(self) -> str:
         return self._color
 
@@ -109,7 +109,7 @@ class Mueble(ABC):
             raise ValueError("El color no puede estar vacío")
         self._color = value.strip()
 
-    @property
+    @precio_base.setter
     def precio_base(self) -> float:
         return self._precio_base
 
@@ -132,6 +132,10 @@ class Mueble(ABC):
     #         float: Precio final calculado
     #     """
     #     pass
+    @abstractmethod
+    def calcular_precio(self) -> float:
+
+        pass
     
     # TODO: Implementar método abstracto obtener_descripcion()
     # Este método debe retornar una descripción detallada del mueble
