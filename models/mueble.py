@@ -46,7 +46,7 @@ class Mueble(ABC):
     #     return self._nombre
 
     @property
-    def nombre(self) -> str:
+    def nobre(self) -> str:
         """Getter para el nombre del mueble."""
         return self._nombre
 
@@ -75,6 +75,50 @@ class Mueble(ABC):
     #     if not value or not value.strip():
     #         raise ValueError("El nombre no puede estar vacío")
     #     self._nombre = value.strip()
+
+    @property
+    def nombre(self) -> str:
+        return self._nombre
+
+    @nombre.setter
+    def nombre(self, value: str) -> None:
+        """Setter para el nombre con validación."""
+        if not value or not value.strip():
+            raise ValueError("El nombre no puede estar vacío")
+        self._nombre = value.strip()
+
+    @property
+    def material(self) -> str:
+        return self._material
+
+    @material.setter
+    def material(self, value: str) -> None:
+        """Setter para el material con validación."""
+        if not value or not value.strip():
+            raise ValueError("El material no puede estar vacío")
+        self._material = value.strip()
+
+    @property
+    def color(self) -> str:
+        return self._color
+
+    @color.setter
+    def color(self, value: str) -> None:
+        """Setter para el color con validación."""
+        if not value or not value.strip():
+            raise ValueError("El color no puede estar vacío")
+        self._color = value.strip()
+
+    @property
+    def precio_base(self) -> float:
+        return self._precio_base
+
+    @precio_base.setter
+    def precio_base(self, value: float) -> None:
+        """Setter para el precio base con validación."""
+        if value < 0:
+            raise ValueError("El precio base no puede ser negativo")
+        self._precio_base = value
     
     # TODO: Implementar método abstracto calcular_precio()
     # Este método debe ser implementado por todas las clases hijas
