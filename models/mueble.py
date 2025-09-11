@@ -32,7 +32,10 @@ class Mueble(ABC):
         # TODO: Inicializar los atributos privados usando underscore
         # Ejemplo: self._nombre = nombre
         # Esto implementa encapsulación, ocultando los datos internos
-        pass
+        self._nombre = nombre
+        self._material = material
+        self._color = color
+        self._precio_base = precio_base
     
     # TODO: Implementar las propiedades (getters) para cada atributo
     # Usa el decorador @property para crear getters
