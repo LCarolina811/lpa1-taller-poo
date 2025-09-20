@@ -159,7 +159,5 @@ class Mueble(ABC):
         """
         Representación técnica del mueble para debugging.
         """
-        # TODO: Implementar una representación técnica
-        # return f"Mueble(nombre='{self.nombre}', material='{self.material}', color='{self.color}', precio_base={self.precio_base})"
-        pass
+        return f"Mueble(nombre='{self.nombre}', material='{self.material}', color='{self.color}', precio_base={self.precio_base})"
 
