@@ -137,17 +137,16 @@ class Mueble(ABC):
 
         pass
     
-    # TODO: Implementar método abstracto obtener_descripcion()
-    # Este método debe retornar una descripción detallada del mueble
-    # def obtener_descripcion(self) -> str:
-    #     """
-    #     Obtiene una descripción detallada del mueble.
-    #     Este método debe ser implementado por cada clase concreta.
-    #     
-    #     Returns:
-    #         str: Descripción completa del mueble
-    #     """
-    #     pass
+    @abstractmethod
+    def obtener_descripcion(self) -> str:
+        """
+        Obtiene una descripción detallada del mueble.
+        Este método debe ser implementado por cada clase concreta.
+        
+        Returns:
+            str: Descripción completa del mueble
+        """
+        pass
     
     def __str__(self) -> str:
         """
