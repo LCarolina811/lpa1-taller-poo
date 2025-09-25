@@ -1,45 +1,60 @@
+
+"""
+Clase abstracta para muebles de almacenamiento (armarios, cajoneras, etc).
+"""
+
+from ..mueble import Mueble
 from abc import abstractmethod
-from models.mueble import Mueble
 
 class Almacenamiento(Mueble):
-    """
-    Clase abstracta para muebles de almacenamiento.
-    Hereda de Mueble y define atributos y métodos comunes.
-    """
+	"""
+	Clase abstracta para muebles que almacenan objetos.
+	Agrupa características comunes de armarios, cajoneras, etc.
+	"""
+	def __init__(self, nombre: str, material: str, color: str, precio_base: float,
+				 num_puertas: int = 0, num_cajones: int = 0, tiene_espejos: bool = False):
+		super().__init__(nombre, material, color, precio_base)
+		self._num_puertas = num_puertas
+		self._num_cajones = num_cajones
+		self._tiene_espejos = tiene_espejos
 
-    def __init__(self, nombre: str, material: str, color: str, precio_base: float, capacidad: float, tipo_apertura: str):
-        super().__init__(nombre, material, color, precio_base)
-        self._capacidad = capacidad 
-        self._tipo_apertura = tipo_apertura
+	@property
+	def num_puertas(self) -> int:
+		return self._num_puertas
 
-    @property
-    def capacidad(self) -> float:
-        
-        return self._capacidad
+	@num_puertas.setter
+	def num_puertas(self, value: int) -> None:
+		if value < 0:
+			raise ValueError("El número de puertas no puede ser negativo")
+		self._num_puertas = value
 
-    @capacidad.setter
-    def capacidad(self, value: float) -> None:
-        if value < 0:
-            raise ValueError("La capacidad no puede ser negativa")
-        self._capacidad = value
+	@property
+	def num_cajones(self) -> int:
+		return self._num_cajones
 
-    @property
-    def tipo_apertura(self) -> str:
+	@num_cajones.setter
+	def num_cajones(self, value: int) -> None:
+		if value < 0:
+			raise ValueError("El número de cajones no puede ser negativo")
+		self._num_cajones = value
 
-        return self._tipo_apertura
+	@property
+	def tiene_espejos(self) -> bool:
+		return self._tiene_espejos
 
-    @tipo_apertura.setter
-    def tipo_apertura(self, value: str) -> None:
-        if not value or not value.strip():
-            raise ValueError("El tipo de apertura no puede estar vacío")
-        self._tipo_apertura = value.strip()
+	@tiene_espejos.setter
+	def tiene_espejos(self, value: bool) -> None:
+		self._tiene_espejos = bool(value)
 
-    def obtener_descripcion(self) -> str:
-        
-        return (f"{self.nombre} de {self.material}, color {self.color}, "
-                f"capacidad {self.capacidad}L, apertura tipo {self.tipo_apertura}")
+	def obtener_info_almacenamiento(self) -> str:
+		info = f"Puertas: {self.num_puertas}, Cajones: {self.num_cajones}"
+		info += f", Espejos: {'Sí' if self.tiene_espejos else 'No'}"
+		return info
 
-    @abstractmethod
-    def calcular_precio(self) -> float:
-        
-        pass
+	@abstractmethod
+	def calcular_precio(self) -> float:
+		pass
+
+	@abstractmethod
+	def obtener_descripcion(self) -> str:
+		pass
