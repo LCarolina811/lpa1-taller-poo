@@ -5,10 +5,29 @@ from models.concretos.mesa import Mesa
 from models.concretos.silla import Silla
 
 def crear_mesa():
-	return Mesa("Mesa Test", "madera", "roble", 500, 1.5, "rectangular", 75, False)
+		# nombre, material, color, precio_base, forma, capacidad_personas, area_superficie, extensible
+		return Mesa(
+			nombre="Mesa Test",
+			material="madera",
+			color="roble",
+			precio_base=500,
+			forma="rectangular",
+			capacidad_personas=4,
+			area_superficie=1.5,
+			extensible=False
+		)
 
 def crear_silla():
-	return Silla("Silla Test", "madera", "rojo", 100, True, "tela", True, True)
+		return Silla(
+			nombre="Silla Test",
+			material="madera",
+			color="rojo",
+			precio_base=100,
+			tiene_respaldo=True,
+			material_tapizado="tela",
+			altura_regulable=True,
+			tiene_ruedas=True
+		)
 
 def test_comedor_agregar_silla():
 	mesa = crear_mesa()
