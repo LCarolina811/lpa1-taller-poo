@@ -1,15 +1,23 @@
+from rich.text import Text
 """
 Interfaz de usuario usando Rich para crear un menú interactivo y atractivo.
 """
 
-# TODO: Importar las librerías necesarias
+
+# Librerías necesarias para la UI
 from rich.console import Console
+from rich.table import Table
+from rich.panel import Panel
+from rich.prompt import Prompt, IntPrompt, Confirm
 from typing import List, Optional
 import time
 
+# Importar servicios y modelos
 from ..services.tienda import TiendaMuebles
 from ..models.mueble import Mueble
-# TODO: Importar los servicios y modelos
+from ..models.composicion.comedor import Comedor
+from ..models.concretos.silla import Silla
+from ..models.concretos.mesa import Mesa
 
 
 class MenuTienda:
