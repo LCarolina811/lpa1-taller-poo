@@ -4,7 +4,7 @@ Permite listar, buscar y filtrar muebles disponibles en la tienda.
 """
 
 from typing import List, Optional
-from ..models.mueble import Mueble
+from models.mueble import Mueble
 
 class Catalogo:
 	"""

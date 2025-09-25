@@ -13,11 +13,11 @@ from typing import List, Optional
 import time
 
 # Importar servicios y modelos
-from ..services.tienda import TiendaMuebles
-from ..models.mueble import Mueble
-from ..models.composicion.comedor import Comedor
-from ..models.concretos.silla import Silla
-from ..models.concretos.mesa import Mesa
+from services.tienda import TiendaMuebles
+from models.mueble import Mueble
+from models.composicion.comedor import Comedor
+from models.concretos.silla import Silla
+from models.concretos.mesa import Mesa
 
 
 class MenuTienda:
